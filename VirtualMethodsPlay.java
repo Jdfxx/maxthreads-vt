@@ -30,8 +30,7 @@ public class VirtualMethodsPlay {
 		System.out.println("Ending thread " + Thread.currentThread());
 
 	}
-	
-	
+
 	
 	public static void main(String[] args) throws Exception {
 		

@@ -15,10 +15,10 @@ import java.util.ArrayList;
  */
 public class MainJacket {
 	
-	private static final int NUM_THREADS = 1_00_0000; 
+	static final int NUM_THREADS = 1_000_000;
 	
-	private static void handleUserRequest() {
-		// System.out.println("Starting thread " + Thread.currentThread());
+	static void handleUserRequest() {
+		 System.out.println("Starting thread " + Thread.currentThread());
 		
 		try {
 			Thread.sleep(2000);
@@ -27,7 +27,7 @@ public class MainJacket {
 			e.printStackTrace();
 		}
 
-		// System.out.println("Ending thread " + Thread.currentThread());
+		 System.out.println("Ending thread " + Thread.currentThread());
 
 	}
 	

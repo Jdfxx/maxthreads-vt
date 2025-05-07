@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
+import static maxthreads.MainJacket.NUM_THREADS;
+
 /**
  * 
  * This program shows the various ways in which a Virtual
@@ -37,7 +39,10 @@ public class VirtualMethodsPlay {
 		System.out.println("Starting main ");
 		
 		// Replace this call as needed
-		playWithVirtualBuilder();
+		//playWithVirtualBuilder();
+		//playWithFactory();
+		//playWithExecutorService();
+		playWithVirtualExecutorService();
 		
 		System.out.println("Ending main ");
 
@@ -107,8 +112,9 @@ public class VirtualMethodsPlay {
 		try (ExecutorService srv = Executors.newVirtualThreadPerTaskExecutor()) {
 			
 			// Submit two tasks to the Executor service 
-			srv.submit(VirtualMethodsPlay::handleUserRequest);
-			srv.submit(VirtualMethodsPlay::handleUserRequest);
+			for (int i = 0; i < NUM_THREADS; i++) {
+				srv.submit(MainJacket::handleUserRequest);
+			}
 			
 		}
 		
